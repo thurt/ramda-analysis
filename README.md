@@ -1,4 +1,4 @@
-The purpose of this analysis is to formulate a generics notation that represents how data is transformed and functions are applied by Ramda functions. 
+The purpose of this analysis is to formulate a generics notation that represents how data is transformed and functions are applied by [Ramda](https://github.com/ramda/ramda) functions. 
 
 This approach is similar in spirit to [Wolfram Mathematica](https://reference.wolfram.com/language/guide/FunctionalProgramming.html), where 
 
