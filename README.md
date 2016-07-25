@@ -22,8 +22,8 @@ ap | `R.ap([f, g], [a, b])` | `[f(a), f(b), g(a), g(b)]`
 apply	| `R.apply(f, [a, b, c])` | `f(a, b, c)`
 applySpec | `R.applySpec({ x: f, y: { z: g } })(a, b)` | `{ x: f(a, b), y: { z: g(a, b) } }` 
 binary | `R.binary(f)(a, b, c)` | `f(a, b)`
-bind | `R.bind(f, o)` | `f.bind(o)`
-call | `R.call(f)(a, b)` | `f(a, b)`
+bind | `R.bind(f, o)(a, b)` | `f.call(o, a, b)`
+call | `R.call(f, a, b)` | `f(a, b)`
 compose	| `R.compose(f, g, h)(a)`	| `f(g(h(a)))`
 composeK | `R.composeK(f, g, h)(a)` | `R.chain(f, R.chain(g, h(a)))`
 converge | `R.converge(f, [g, h])(a, b)` | `f(g(a, b), h(a, b))`
@@ -31,11 +31,11 @@ flip | `R.flip(f)(a, b, c)` | `f(b, a, c)`
 ~~forEach~~ | ~~`R.forEach(f, [a, b, c])`~~ | ~~`[a, b, c]`~~
 identity | `R.identity(a)` | `a`
 invoker | `R.invoker(0, 'method')(o)`<br>`R.inovker(1, 'method')(a, o)`<br>`R.invoker(2, 'method')(a, b, o)` | `o['method']()`<br>`o['method'](a)`<br>`o['method'](a, b)`
-juxt | `R.juxt([f, g])(a, b)` | `[f(a, b), g(a, b)]`
+juxt | `R.juxt([f, g, h])(a, b)` | `[f(a, b), g(a, b), h(a, b)]`
 map | `R.map(f, [a, b])`<br>`R.map(f, { x: a, y: b })`<br>`R.map(f, functor_o)` | `[f(a), f(b)]`<br>`{ x: f(a), y: f(b) }`<br>`functor_o.map(f)`
-merge | `R.merge({ x: 1, y: 2 }, { z: 3 })` | `{ x: 1, y: 2, z: 3 }`
+merge | `R.merge({ x: 1, y: 2 }, { y: 5, z: 3 })` | `{ x: 1, y: 5, z: 3 }`
 mergeAll | `R.mergeAll([`<br>`  { x: 1 },`<br>`  { y: 2 },`<br>`  { z: 3 }`<br>`])` | `{ x: 1, y: 2, z: 3 }`
-mergeWithKey | `mergeWithKey(f, `<br>`{ x: 1, value: a },`<br>`{ y: 2, value: b })` | `{ x: 1, y: 2,`<br>`value: f('value', a, b) }`
+mergeWithKey | `mergeWithKey(f, `<br>`{ x: 1, y: 2 },`<br>`{ y: 5, z: 3 })` | `{ x: 1, y: f('y', 2, 5), z: 3 }`
 nAry | `R.nAry(0, f)(a, b)`<br>`R.nAry(1, f)(a, b)`<br>`R.nAry(2, f)(a, b)` | `f()`<br>`f(a)`<br>`f(a, b)`
 nth | `R.nth(-1, [a, b, c])`<br>`R.nth(0, [a, b, c])`<br>`R.nth(1, [a, b, c])` | `c`<br>`a`<br>`b`
 nthArg | `R.nthArg(-1)(a, b, c)`<br>`R.nthArg(0)(a, b, c)`<br>`R.nthArg(1)(a, b, c)` | `c`<br>`a`<br>`b`
@@ -58,8 +58,8 @@ update | `R.update(-1, a, [b, c])`<br>`R.update(0, a, [b, c])`<br>`R.update(1, a
 useWith | `R.useWith(f, [g, h])(a, b)` | `f(g(a), h(b))`
 wrap | `R.wrap(f, g)(a, b)` | `g(f, a, b)`
 xprod | `R.xprod([a, b], [c, d])` | `[[a, c], [a, d], [b, c], [b, d]]`
-zip | `R.zip([a, b], [c, d])` | `[[a, c], [b, d]]`
-zipWith | `R.zipWith(f, [a, b], [c, d])` | `[f(a, c), f(b, d)]`
+zip | `R.zip([a, b, c], [d, e, f])` | `[[a, d], [b, e], [c, f]]`
+zipWith | `R.zipWith(fn, [a, b, c], [d, e, f])` | `[fn(a, d), fn(b, e), fn(c, f)]`
 
 These two don't fit nicely in a table:
 ```javascript
