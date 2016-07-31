@@ -66,7 +66,7 @@ These two don't fit nicely in a table:
 // mapAccum(f, a, [b, c, d])
 // * f must return an array of length 2 like [acc, output]
 [
-  f(f(f(a, b)[0], c)[0], d),
+  f(f(f(a, b)[0], c)[0], d)[0],
   [ 
     f(a, b)[1],  
     f(f(a, b)[0], c)[1],
@@ -77,7 +77,7 @@ These two don't fit nicely in a table:
 // mapAccumRight(f, a, [b, c, d])
 // * f must return an array of length 2 like [acc, output]
 [
-  f(f(f(a, d)[0], c)[0], b),
+  f(f(f(a, d)[0], c)[0], b)[0],
   [
     f(a, d)[1], 
     f(f(a, d)[0], c)[1] ,
