@@ -49,7 +49,7 @@ repeat | `R.repeat(a, 0)`<br>`R.repeat(a, 1)`<br>`R.repeat(a, 2)` | `[]`<br>`[a]
 scan | `R.scan(f, a, [b, c])` | `[a, f(a, b), f(f(a, b), c)]`
 tap | `R.tap(f, a)` | `a`
 take | `R.take(-1, [a, b])`<br>`R.take(0, [a, b])`<br>`R.take(1, [a, b])`<br>`R.take(2, [a, b])` | `[a, b]`<br>`[]`<br>`[a]`<br>`[a, b]`
-times | `R.times(f, -1)`<br>`R.times(f, 0)`<br>`R.times(f, 1)`<br>`R.times(f, 2)` | `Error`<br>`[]`<br>`[f(0)]`<br>`[f(0), f(1)]`
+times | `R.times(f, 0)`<br>`R.times(f, 1)`<br>`R.times(f, 2)` | `[]`<br>`[f(0)]`<br>`[f(0), f(1)]`
 transpose | `R.transpose([[a], [b], [c]])`<br>`R.transpose([[a, b], [c, d]])`<br>`R.transpose([[a, b], [c]])` | `[a, b, c]`<br>`[[a, c], [b, d]]`<br>`[[a, c], [b]]`
 unapply | `R.unapply(f)(a, b)` | `f([a, b])`
 unary | `R.unary(f)(a, b, c)` | `f(a)`
