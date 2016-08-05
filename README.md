@@ -35,7 +35,7 @@ juxt | `R.juxt([f, g, h])(a, b)` | `[f(a, b), g(a, b), h(a, b)]`
 map | `R.map(f, [a, b])`<br>`R.map(f, { x: a, y: b })`<br>`R.map(f, functor_o)` | `[f(a), f(b)]`<br>`{ x: f(a), y: f(b) }`<br>`functor_o.map(f)`
 merge | `R.merge({ x: 1, y: 2 }, { y: 5, z: 3 })` | `{ x: 1, y: 5, z: 3 }`
 mergeAll | `R.mergeAll([`<br>`  { x: 1 },`<br>`  { y: 2 },`<br>`  { z: 3 }`<br>`])` | `{ x: 1, y: 2, z: 3 }`
-mergeWithKey | `mergeWithKey(f, `<br>`{ x: 1, y: 2 },`<br>`{ y: 5, z: 3 })` | `{ x: 1, y: f('y', 2, 5), z: 3 }`
+mergeWithKey | `R.mergeWithKey(f, `<br>`{ x: 1, y: 2 },`<br>`{ y: 5, z: 3 })` | `{ x: 1, y: f('y', 2, 5), z: 3 }`
 nAry | `R.nAry(0, f)(a, b)`<br>`R.nAry(1, f)(a, b)`<br>`R.nAry(2, f)(a, b)` | `f()`<br>`f(a)`<br>`f(a, b)`
 nth | `R.nth(-1, [a, b, c])`<br>`R.nth(0, [a, b, c])`<br>`R.nth(1, [a, b, c])` | `c`<br>`a`<br>`b`
 nthArg | `R.nthArg(-1)(a, b, c)`<br>`R.nthArg(0)(a, b, c)`<br>`R.nthArg(1)(a, b, c)` | `c`<br>`a`<br>`b`
