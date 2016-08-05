@@ -30,7 +30,7 @@ converge | `R.converge(f, [g, h])(a, b)` | `f(g(a, b), h(a, b))`
 flip | `R.flip(f)(a, b, c)` | `f(b, a, c)`
 ~~forEach~~ | ~~`R.forEach(f, [a, b, c])`~~ | ~~`[a, b, c]`~~
 identity | `R.identity(a)` | `a`
-invoker | `R.invoker(0, 'method')(o)`<br>`R.inovker(1, 'method')(a, o)`<br>`R.invoker(2, 'method')(a, b, o)` | `o['method']()`<br>`o['method'](a)`<br>`o['method'](a, b)`
+invoker | `R.invoker(0, 'method')(o)`<br>`R.invoker(1, 'method')(a, o)`<br>`R.invoker(2, 'method')(a, b, o)` | `o['method']()`<br>`o['method'](a)`<br>`o['method'](a, b)`
 juxt | `R.juxt([f, g, h])(a, b)` | `[f(a, b), g(a, b), h(a, b)]`
 map | `R.map(f, [a, b])`<br>`R.map(f, { x: a, y: b })`<br>`R.map(f, functor_o)` | `[f(a), f(b)]`<br>`{ x: f(a), y: f(b) }`<br>`functor_o.map(f)`
 merge | `R.merge({ x: 1, y: 2 }, { y: 5, z: 3 })` | `{ x: 1, y: 5, z: 3 }`
