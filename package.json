@@ -1,0 +1,18 @@
+{
+  "name": "ramda-analysis",
+  "version": "1.0.0",
+  "description": "The purpose of this analysis is to formulate a generics notation that represents how data is transformed and functions are applied by [Ramda](https://github.com/ramda/ramda) functions.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thurt/ramda-analysis.git"
+  },
+  "author": "thurt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thurt/ramda-analysis/issues"
+  },
+  "homepage": "https://github.com/thurt/ramda-analysis#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}

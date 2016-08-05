@@ -1,6 +1,4 @@
 
-These are the representations that will be inserted into the ramda/ramda repo
-```javascript
 R.adjust(f, -1, [a, b]) = [a, f(b)]
 R.adjust(f, 0, [a, b]) = [f(a), b]
 
@@ -127,5 +125,3 @@ R.xprod([a, b], [c, d]) = [[a, c], [a, d], [b, c], [b, d]]
 R.zip([a, b, c], [d, e, f]) = [[a, d], [b, e], [c, f]]
 
 R.zipWith(fn, [a, b, c], [d, e, f]) = [fn(a, d), fn(b, e), fn(c, f)]
-
-```
