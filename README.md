@@ -45,7 +45,7 @@ pipe | `R.pipe(f, g, h)(a, b)` | `h(g(f(a, b)))`
 pipeK | `R.pipeK(f, g, h)(a, b)` | `R.chain(h, R.chain(g, f(a, b)))`
 pluck | `R.pluck('x', [`<br>`{x: 1, y: 2}, `<br>`{x: 3, y: 4}, `<br>`{x: 5, y: 6}`<br>`])`<br>`R.pluck(0, [`<br>`[1, 2], `<br>`[3, 4], `<br>`[5, 6]`<br>`])` | `[1, 3, 5]`<br>`[1, 3, 5]`
 reduce | `R.reduce(f, a, [b, c, d])` | `f(f(f(a, b), c), d)`
-repeat | `R.repeat([a, b], 0)`<br>`R.repeat([a, b], 1)`<br>`R.repeat([a, b], 2)` | `[]`<br>`[[a, b]]`<br>`[[a, b], [a, b]]`
+repeat | `R.repeat(a, 0)`<br>`R.repeat(a, 1)`<br>`R.repeat(a, 2)` | `[]`<br>`[a]`<br>`[a, a]`
 scan | `R.scan(f, a, [b, c])` | `[a, f(a, b), f(f(a, b), c)]`
 tap | `R.tap(f, a)` | `a`
 take | `R.take(-1, [a, b])`<br>`R.take(0, [a, b])`<br>`R.take(1, [a, b])`<br>`R.take(2, [a, b])` | `[a, b]`<br>`[]`<br>`[a]`<br>`[a, b]`
