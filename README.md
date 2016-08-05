@@ -24,8 +24,8 @@ applySpec | `R.applySpec({ x: f, y: { z: g } })(a, b)` | `{ x: f(a, b), y: { z: 
 binary | `R.binary(f)(a, b, c)` | `f(a, b)`
 bind | `R.bind(f, o)(a, b)` | `f.call(o, a, b)`
 call | `R.call(f, a, b)` | `f(a, b)`
-compose	| `R.compose(f, g, h)(a)`	| `f(g(h(a)))`
-composeK | `R.composeK(f, g, h)(a)` | `R.chain(f, R.chain(g, h(a)))`
+compose	| `R.compose(f, g, h)(a, b)`	| `f(g(h(a, b)))`
+composeK | `R.composeK(f, g, h)(a, b)` | `R.chain(f, R.chain(g, h(a, b)))`
 converge | `R.converge(f, [g, h])(a, b)` | `f(g(a, b), h(a, b))`
 flip | `R.flip(f)(a, b, c)` | `f(b, a, c)`
 ~~forEach~~ | ~~`R.forEach(f, [a, b, c])`~~ | ~~`[a, b, c]`~~
