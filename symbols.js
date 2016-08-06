@@ -38,8 +38,8 @@ R.map(f, functor_o) = functor_o.map(f)
 
 R.mapAccum(f, a, [b, c, d]) = [
   f(f(f(a, b)[0], c)[0], d)[0],
-  [ 
-    f(a, b)[1],  
+  [
+    f(a, b)[1],
     f(f(a, b)[0], c)[1],
     f(f(f(a, b)[0], c)[0], d)[1]
   ]
@@ -48,7 +48,7 @@ R.mapAccum(f, a, [b, c, d]) = [
 R.mapAccumRight(f, a, [b, c, d]) = [
   f(f(f(a, d)[0], c)[0], b)[0],
   [
-    f(a, d)[1], 
+    f(a, d)[1],
     f(f(a, d)[0], c)[1],
     f(f(f(a, d)[0], c)[0], b)[1]
   ]
